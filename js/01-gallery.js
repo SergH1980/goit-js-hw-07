@@ -4,14 +4,14 @@ import { galleryItems } from "./gallery-items.js";
 const galleryContainer = document.querySelector(`.gallery`);
 let modal;
 const imageEl = galleryItems
-  .map((image) => {
+  .map(({ preview, original, description }) => {
     return `<div class="gallery__item">
-        <a class="gallery__link" href="${image.original}">
+        <a class="gallery__link" href="${original}">
           <img
             class="gallery__image"
-            src="${image.preview}"
-            data-source="${image.original}"
-            alt="${image.description}"
+            src="${preview}"
+            data-source="${original}"
+            alt="${description}"
           />
         </a>
       </div>`;
